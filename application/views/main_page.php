@@ -110,7 +110,8 @@
 		}
 		
 		function modalEdit(id){
-			
+			mainAjax("POST","<?php echo base_url("index.php/MainPage/modalEdit") ?>",{},"#modalMain");
+			$("#modalMain").modal("show");
 		}
 			function mainAjax(type, url, data, place) {
 				$.ajax({
