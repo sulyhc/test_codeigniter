@@ -65,12 +65,17 @@
 					
 					<div class="row">						
 						<div class="col-md-2 col-md-offset-10">
-							<button class="btn btn-primary btn-block" onclick="loadRecords()">Nuevo Registro</button>
+							<button class="btn btn-primary btn-block" onclick="modalAltas()">Nuevo Registro</button>
 						</div>
 					</div>		
 					<div id="tableDiv" class="row">
 						
 					</div>	
+					
+					<!-- modal -->
+					<div id="modalMain" class="modal fade" role="dialog">
+					</div>
+					<!-- end modal -->
 
 						
 					<!-- /. ROW  -->
@@ -99,6 +104,14 @@
 			mainAjax("POST","<?php echo base_url("index.php/MainPage/loadRecords") ?>",{},"#tableDiv");
 		}
 		
+		function modalAltas(){
+			mainAjax("POST","<?php echo base_url("index.php/MainPage/modalAdd") ?>",{},"#modalMain");
+			$("#modalMain").modal("show");
+		}
+		
+		function modalEdit(id){
+			
+		}
 			function mainAjax(type, url, data, place) {
 				$.ajax({
 					type : type,

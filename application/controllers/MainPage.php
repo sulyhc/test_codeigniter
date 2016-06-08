@@ -18,7 +18,7 @@ class MainPage extends CI_Controller {
 								<th>Descripcion</th>
 								<th>Fecha Alta</th>
 								<th>Prioridad</th>
-								<th>Acciones</th>
+								<th width="25%">Acciones</th>
 							</tr>
 						</thead><tbody>{%content%}</tbody></table>
 				</div>';
@@ -28,7 +28,11 @@ class MainPage extends CI_Controller {
 					<td>3</td>
 					<td>4</td>
 					<td>5</td>
-					<td>6</td>
+					<td><div class="btn-group">
+						<button class="btn btn-primary">Edit</button>
+						<button class="btn btn-info">View</button>
+						<button class="btn btn-danger">Remove</button>
+					</div></td>
 				</tr>';		
 		$content = "";
 		for ($i = 0; $i < 10; $i++) {
@@ -37,6 +41,11 @@ class MainPage extends CI_Controller {
 
 		echo str_replace('{%content%}', $content, $table);
 	}
+	
+	public function modalAdd(){
+		$this ->load -> view("modalAdd");
+	}
 
 }
 ?>
+
