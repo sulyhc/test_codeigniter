@@ -29,7 +29,7 @@ class MainPage extends CI_Controller {
 					<td>4</td>
 					<td>5</td>
 					<td>6</td>
-				</tr>';
+				</tr>';		
 		$content = "";
 		for ($i = 0; $i < 10; $i++) {
 			$content .= $row;
