@@ -29,8 +29,7 @@ class MainPage extends CI_Controller {
 					<td>4</td>
 					<td>5</td>
 					<td><div class="btn-group">
-						<button class="btn btn-primary">Edit</button>
-						<button class="btn btn-info">View</button>
+						<button class="btn btn-primary" onclick="modalEdit()">Edit</button>
 						<button class="btn btn-danger">Remove</button>
 					</div></td>
 				</tr>';		
@@ -44,6 +43,10 @@ class MainPage extends CI_Controller {
 	
 	public function modalAdd(){
 		$this ->load -> view("modalAdd");
+	}
+	
+	public function modalEdit(){
+		$this ->load -> view("modalEdit");
 	}
 
 }
