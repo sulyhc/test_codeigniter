@@ -46,7 +46,7 @@
 						</li>
 
 						<li>
-							<a class="active-menu"  href="<?php echo base_url("index.php/MainPage/test")?>"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+							<a class="active-menu"  href="<?php echo base_url("index.php/MainPage/index")?>"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
 						</li>
 					</ul>
 

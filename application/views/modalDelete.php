@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal">Agregar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>
