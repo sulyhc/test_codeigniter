@@ -10,7 +10,7 @@ class MainPage extends CI_Controller {
 
 	public function loadRecords() {
 		$table = '<div class="col-md-12">
-					<table class="table table-striped">
+					<table id="tableActivities" class="table table-striped">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -30,7 +30,7 @@ class MainPage extends CI_Controller {
 					<td>5</td>
 					<td><div class="btn-group">
 						<button class="btn btn-primary" onclick="modalEdit()">Edit</button>
-						<button class="btn btn-danger">Remove</button>
+						<button class="btn btn-danger" onclick="modalDelete()">Remove</button>
 					</div></td>
 				</tr>';		
 		$content = "";
@@ -41,12 +41,20 @@ class MainPage extends CI_Controller {
 		echo str_replace('{%content%}', $content, $table);
 	}
 	
+	
 	public function modalAdd(){
+		$this -> load -> helper('url');
 		$this ->load -> view("modalAdd");
 	}
 	
 	public function modalEdit(){
+		$this -> load -> helper('url');
 		$this ->load -> view("modalEdit");
+	}
+	
+	public function modalDelete(){
+		$this -> load -> helper('url');
+		$this -> load -> view ("modalDelete");
 	}
 
 }

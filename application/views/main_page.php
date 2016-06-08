@@ -16,6 +16,7 @@
 		<link href="<?php echo base_url("assets/css/custom.css")?>" rel="stylesheet" />
 		<!-- GOOGLE FONTS-->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<link href='//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css' />
 	</head>
 	<body>
 		<div id="wrapper">
@@ -97,11 +98,15 @@
 		<script src="<?php echo base_url("assets/js/morris/morris.js") ?>"></script>
 		<!-- CUSTOM SCRIPTS -->
 		<script src="<?php echo base_url("assets/js/custom.js") ?>"></script>
+		<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
 		<script>
+					
 		loadRecords();
+		
 		function loadRecords(){
 			mainAjax("POST","<?php echo base_url("index.php/MainPage/loadRecords") ?>",{},"#tableDiv");
+			$('#tableActivities').DataTable();
 		}
 		
 		function modalAltas(){
@@ -111,6 +116,11 @@
 		
 		function modalEdit(id){
 			mainAjax("POST","<?php echo base_url("index.php/MainPage/modalEdit") ?>",{},"#modalMain");
+			$("#modalMain").modal("show");
+		}
+		
+		function modalDelete(id){
+			mainAjax("POST","<?php echo base_url("index.php/MainPage/modalDelete") ?>",{},"#modalMain");
 			$("#modalMain").modal("show");
 		}
 			function mainAjax(type, url, data, place) {
