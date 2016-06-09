@@ -57,6 +57,19 @@ class MainPage extends CI_Controller {
 		$this -> load -> view ("modalDelete");
 	}
 
+	public function addRecord(){
+		$post = $this -> input -> post();
+		var_dump($post);
+	}
+	
+	public function editRecord(){
+		
+	}
+	
+	public function deleteRecord(){
+		
+	}
+
 }
 ?>
 

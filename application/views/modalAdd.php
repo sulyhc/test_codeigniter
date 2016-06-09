@@ -16,8 +16,7 @@
         		</div>
         		<div class="col-md-6">
         			<label>Description</label>
-        			<textarea name="descripcion" class="form-control" >
-        				</textarea>
+        			<textarea name="descripcion" class="form-control" ></textarea>
         		</div>
         	</div>
         	<div class="form-group">
@@ -35,7 +34,20 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal">Agregar</button>
+        <button type="button" class="btn btn-success" id="btnAdd" data-dismiss="modal">Agregar</button>
       </div>
     </div>
   </div>
+  
+<script>
+	$("#btnAdd").click(function(){
+		$.ajax({
+					type : "POST",
+					url : "<?php echo base_url("index.php/MainPage/addRecord") ?>",
+					data : $("#formNva").serialize(),
+					success : function(data) {
+						alert(data);
+					}
+				});
+	});
+</script>
