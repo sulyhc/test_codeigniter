@@ -58,16 +58,33 @@ class MainPage extends CI_Controller {
 	}
 
 	public function addRecord(){
-		$post = $this -> input -> post();
-		var_dump($post);
+		$this->load->library("crud_mongo");
+		$this->crud_mongo->addRecord();
 	}
 	
 	public function editRecord(){
 		
 	}
 	
+	public function getRecord(){		
+		$this->load->library("crud_mongo");
+		$data = array("id" => "57675aba9a8bc0293837b5c1");
+		$this->crud_mongo->getItem("57675aba9a8bc0293837b5c1");
+	}
+	
 	public function deleteRecord(){
 		
+	}
+	
+	public function readAll(){
+		$this->load->library("crud_mongo");
+		$this->crud_mongo->readAll();
+		
+	}
+	
+	public function test(){
+		$this->load->library("crud_mongo");
+		$this->crud_mongo->echoTest();
 	}
 
 }
